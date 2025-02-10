@@ -1,2 +1,3 @@
-# tinyusb_with_udp_server
-Simple implementation of tinyusb with a UDP server to receive HID commands
+# Simple UDP Server for RaspberryPi Pico W
+
+Simple implementation of UDP server for Raspberry Pi Pico W RP2040.
