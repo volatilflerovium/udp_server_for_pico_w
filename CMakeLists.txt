@@ -48,7 +48,7 @@ if(USB_DEBUG)
 	message_yellow("Debug enabled via usb serial port")
 endif()
 
-generate_server_definition_file("${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/include")
+generate_server_definition_file("${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/include/udp_server")
 
 #--------------------------------------------------------------------
 
