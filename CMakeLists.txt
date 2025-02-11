@@ -48,12 +48,14 @@ if(USB_DEBUG)
 	message_yellow("Debug enabled via usb serial port")
 endif()
 
+generate_server_definition_file("${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/include")
+
 #--------------------------------------------------------------------
 
 add_executable(
 	"${APP}"
 	main.c
-	picow_udp_server.c
+	src/picow_udp_server.c
 )
 
 target_compile_definitions(
@@ -66,7 +68,7 @@ target_compile_definitions(
 target_include_directories(
 	"${APP}"
 	PRIVATE
-	${CMAKE_CURRENT_LIST_DIR}
+	${CMAKE_CURRENT_LIST_DIR}/include
 )
 
 target_link_libraries(

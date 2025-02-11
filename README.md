@@ -18,9 +18,9 @@ Simple implementation of UDP server for Raspberry Pi Pico W RP2040.
 - LWIP_MODE accepts: background or poll. Default: background.
 - USB_DEBUG enable usb serial for debugging. Default ON
 
-After flashing your Pico W, it should connect to the local network and it will
-given an IP. You can check the IP asigned to the UDP server with the command:
-(first the Pico w unplugged)
+After flashing your Pico W, it should connect to the local network and it will be
+given an ip address. You can check the ip asigned to the UDP server with the command:
+(first with Pico w unplugged)
 ```
 #nmap -sn 192.168.1.*
 ```

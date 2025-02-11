@@ -20,7 +20,7 @@
 
 //-------------------------------------------------------------------
 
-void stunt_callback(uint8_t* b, uint16_t s)
+void stunt_callback(const uint8_t* b, const uint16_t s)
 {
 	(void) b;
 	(void) s;
@@ -36,7 +36,7 @@ typedef struct UDP_SERVER_T_
 	int recv_data_size;
 	uint16_t client_port;
 	bool running;
-	void (*RECV_CBK)(uint8_t*, uint16_t);
+	void (*RECV_CBK)(const uint8_t*, const uint16_t);
 } UDP_SERVER_T;
 
 static UDP_SERVER_T* udp_server=NULL;
@@ -158,7 +158,7 @@ bool send_data(const void* buffer, const uint16_t bfs)
 
 //-------------------------------------------------------------------
 
-bool start_udp_server(void (*RECV_CBK)(uint8_t*, uint16_t)) 
+bool start_udp_server(void (*RECV_CBK)(const uint8_t*, const uint16_t)) 
 {
 	if (!server_init()) {
 		return false;
@@ -178,10 +178,7 @@ bool start_udp_server(void (*RECV_CBK)(uint8_t*, uint16_t))
 void server_poll()
 {
 	#if PICO_CYW43_ARCH_POLL
-	// if you are using pico_cyw43_arch_poll, then you must poll periodically from your
-	// main loop (not from a timer) to check for Wi-Fi driver or lwIP work that needs to be done.
 	cyw43_arch_poll();
-	//sleep_ms(BEACON_INTERVAL_MS);
 	#endif
 }
 

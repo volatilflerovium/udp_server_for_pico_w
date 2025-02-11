@@ -1,10 +1,10 @@
 /*********************************************************************
-*                                                                    *
-* Version: 1.0                                                       *
-* Date:    08-02-2025                                                *
-* Author:  Dan Machado                                               *
-*                                                                    *
-* Based on TCP server pico w example                                 *
+*																	 *
+* Version: 1.0													     *
+* Date:	08-02-2025												     *
+* Author:  Dan Machado											     *
+*																	 *
+* Based on TCP server pico w example								 *
 **********************************************************************/
 #include <string.h>
 #include <stdlib.h>
@@ -22,22 +22,21 @@ void clientMsg(uint8_t* buffer, uint16_t buffer_size)
 
 int main() 
 {
-    stdio_init_all();
+	stdio_init_all();
 
 	if(!init_network()){
 		return 1;
 	}
 
-    bool server_up=start_udp_server(clientMsg);
+	bool server_up=start_udp_server(clientMsg);
 
-	int i=0;
 	while(server_up){
 		server_poll();
 		sleep_ms(1000);
-		usb_dbg("ok: %d\n", ++i);
+		usb_dbg("ok: %d\n");
 	}
 	
-    stop_network();
+	stop_network();
 
-    return 0;
+	return 0;
 }

@@ -56,8 +56,8 @@ if(PICO_BOARD STREQUAL "pico_w")
 
 endif()
 
-function(generate_server_definition_file TEMPLATE_PATH)
-	configure_file("${TEMPLATE_PATH}/cmake/IncludeDefinitionTemplate.cmake.in" "${TEMPLATE_PATH}/server_config.h" @ONLY)
+function(generate_server_definition_file TEMPLATE_PATH DEST)
+	configure_file("${TEMPLATE_PATH}/cmake/IncludeDefinitionTemplate.cmake.in" "${DEST}/server_config.h" @ONLY)
 endfunction()
 
 
