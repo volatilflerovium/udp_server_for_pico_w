@@ -7,7 +7,7 @@
 *                                                                    *
 * Based on TCP server pico w example                                 *
 **********************************************************************/
-#include "picow_udp_server.h"
+#include "udp_server/picow_udp_server.h"
 
 #include <string.h>
 #include <stdlib.h>

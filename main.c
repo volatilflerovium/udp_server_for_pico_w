@@ -9,9 +9,9 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "picow_udp_server.h"
+#include "udp_server/picow_udp_server.h"
 
-void clientMsg(uint8_t* buffer, uint16_t buffer_size)
+void clientMsg(const uint8_t* buffer, const uint16_t buffer_size)
 {
 	(void) buffer;
 	(void) buffer_size;
