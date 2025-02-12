@@ -69,7 +69,6 @@ target_include_directories(
 	"${APP}"
 	PRIVATE
 	${CMAKE_CURRENT_LIST_DIR}/include
-	${CMAKE_CURRENT_LIST_DIR}/include/udp_server
 )
 
 target_link_libraries(
